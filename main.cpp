@@ -52,7 +52,18 @@ int main()
  *         of rows and columns which each element assigned to value
 **/
 vector <vector <char> > initializeMatrix(int rows, int columns, char value)
-{
+{ 
+        vector<vector<char>> character;
+        character.resize(rows);
+        for(int row = 0; row < rows; row++)
+        {
+                character[row].resize(columns);
+                for(int col = 0; col < columns; col++)
+                {
+                        character[row][col] = value;
+                }
+        }
+        return character;
 }
 
 /**
@@ -64,4 +75,12 @@ vector <vector <char> > initializeMatrix(int rows, int columns, char value)
 **/
 void printMatrix(vector <vector <char> > matrix)
 {
+        for(int rows = 0; rows < matrix.size();rows++)
+        {
+                for(int cols = 0; cols < matrix[rows].size();cols++)
+                {
+                        cout<<matrix[rows][cols]<<" ";
+                }
+                cout<<endl;
+        }
 }
